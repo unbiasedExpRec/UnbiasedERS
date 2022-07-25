@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="gr__shape2prog_csail_mit_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+              <meta name="viewport" content="width=device-width, initial-scale=1">    <link rel="shortcut icon" href="http://shape2prog.csail.mit.edu/images/favicon.ico">
+        <meta name="description" content="Causally Attentive Collaborative Filtering">
+        <meta name="keywords" content="Causally Attentive Collaborative Filtering">
+
+        <title>Causally Attentive Collaborative Filtering</title>
+        <link rel="stylesheet" href="asset/font.css">
+        <link rel="stylesheet" href="asset/main.css">
+
+    </head>
+
+    <body data-gr-c-s-loaded="true">
+
+        <div class="outercontainer">
+            <div class="container">
+
+                <div class="content project_title">
+                    <h1>Causally Attentive Collaborative Filtering</h1>
+                </div>
+
+                <div class="content project_headline">
+                    <center><h2>
+                      <font size="3">Anonymous Author</font>&nbsp;&nbsp;
+                   
+                </div>
+
+
+                
+
+
+                <div class="content">
+                    <div class="text">
+                        <h1>1. Abstract</h1>
+                        <p><font size=3>Attention-based recommender models hold the promise of improving performance by learning to discriminate different user/item feature importances.
+However, due to the existence of the latent confounders, the correlations captured by the attention mechanisms may fail to reflect the true influence of the features on the targets (i.e., spurious correlation).
+In this paper, we propose to equip attention mechanism with causal inference, which is a powerful tool to identify the real causal effects.
+Our model is based on the potential outcome framework, where the item features are regarded as the treatment and the outcome is the predicted user preference.
+In specific, the real causal relation of each feature on the outcome is measured by the individual treatment effect (ITE).
+In order to distill the causal information into the attention learning process, we minimize the distance between the traditional attention weights and the normalized ITE.
+With such causal regularization, the learned attention weights can reflect the real causal effects, which are expected to correct the feature importances for improved recommendation performance.
+We conduct extensive experiments based on three real-world datasets to demonstrate our model's effectiveness.</font></p>
+			    <h3>Contributions</h3>
+                            <p><ul class="download">
+			    <font size=3>
+                            <li>We try to arouse people's attention on the potential spurious correlations captured by existing attention-based recommender models.</li>
+			    <li>We design an ITE enhanced attention mechanism to identify the real feature-target relations, which can better discriminate feature importances and lead to improved recommendation performance.</li>
+			    <li>Extensive experiments based on three real-world datasets are conducted to demonstrate our model's effectiveness.</li>
+                            </font>
+                    </div>
+                </div>
+			
+			
+			
+			
+			
+                <div class="content">
+                    <div class="text">
+                        <h1>2. Main Results</h1>
+                    </div>
+
+                    <div class="content project_headline">
+					<div class="text">
+                            <p><font size=3>Table 1: Overall comparison between the baselines and our models. We use bold fonts to label the best performance. The first module (line 3-9) presents the performance of the baselines. The second module (line 10-14) shows the performance of our model with different distance implementation. The bottom line shows the performance of our model without 𝐿causal.</font></p>
+                        </div>
+                        <div class="img" style="text-align:center">
+                            <img class="img_responsive" src="asset/cacf_result.png" alt="result" style="margin:auto;max-width:90%">
+			</div>
+                    </div>		
+                </div>
+			
+			
+			
+			
+			
+		<div class="content">
+                    <div class="text">
+                        <h1>3. Code and Datasets</h1>
+
+						<h2> 3.1 Code <a href="https://drive.google.com/drive/folders/1a-VR4rIv5m-qseVnPX_2n210bkUyqxeJ">[link:Google Driver]</font></a></h2>
+						
+						<div class="content project_headline">
+						<div class="text">
+                            <p><font size=3>Table 2: Structure of the code files [main program].</font></p>
+                        </div>
+						<div class="img" style="text-align:center">
+                            <img class="img_responsive" src="asset/cacf-code1.png" alt="result" style="margin:auto;max-width:90%">
+                        </div>
+					
+                        <div class="img" style="text-align:center">
+						<div class="text">
+                            <p><font size=3>Table 3: Structure of the code files [utils].</font></p>
+                        </div>
+                            <img class="img_responsive" src="asset/cacf-code2.png" alt="result" style="margin:auto;max-width:90%">
+                        </div>
+                        </div>
+                        <h2>3.2 Datasets <a href="https://drive.google.com/drive/folders/19tPFh4NZXTwoussEhcxN-EH3XQdjlsKl?usp=sharing">[link:Google Driver]</a></font></h2>
+						<div class="content project_headline">
+						<div class="text">
+                            <p style="text-align:center"><font size=3>Table 4: Statistics of the datasets used in our experiments. D denotes the number of features contained in the datasets</font></p>
+                        </div>
+                        <div class="img" style="text-align:center">
+                            <img class="img_responsive" src="asset/cacf_dataset.png" alt="result" style="margin:auto;max-width:70%">
+                        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+
+			
+			
+			
+
+                <div class="content">
+                    <div class="text">
+                        <h1>4. Usage</h1>
+						<p> <font size=4>4.1. Download the code and dataset</font></p>
+						<p> <font size=4>4.2. Run </font></p>
+						<p> <font size=3>Run run_cacf.py.</p>
+                        				<div class="img" style="text-align:center">
+                            				<img class="img_responsive" src="asset/cacf-command1.png" alt="result" style="margin:auto;max-width:83%">
+                       					</div>
+			    			<p> <font size=3>You can configure some training parameters through the command line.</p>
+			    				<div class="content project_headline">
+			    				<div class="text">
+                            				<p style="text-align:center"><font size=3>Table 5: Parameters meanings</font></p>
+                        				</div>
+							<div class="img" style="text-align:center">
+                            				<img class="img_responsive" src="asset/cacf-command2.png" alt="result" style="margin:auto;max-width:75%">
+                       					</div>
+							</div>
+						</font>
+                    </div>
+                </div>
+               
+			
+			
+                <div class="content">
+                    <div class="text">
+                        <h1>5. Detailed parameters search ranges</h1>
+			<div class="content project_headline">
+			<div class="text">
+                	<p style="text-align:center"><font size=3>Table 6: The ranges of parameters. </font></p>
+                        </div>			
+			</div>
+			<div class="img" style="text-align:center">
+                            <img class="img_responsive" src="asset/cacf-params.png" alt="result" style="margin:auto;max-width:90%">
+                        </div>
+                    </div>
+                </div>
+
+			
+			
+
+                <div class="content">
+                    <div class="text">
+                        <h1>6. Runtime Environment</h1>
+						<ul class="download">
+						<font size=3>
+                            				<li><p>System: Ubuntu 20.04.1 LTS</p></li>
+							<li><p>CPU: Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz</p></li>
+							<li><p>GPU: NVIDIA Corporation Device 2204 (rev a1)</p></li>
+                           				<li><p>GPU-Memory: 24G</p></li>
+							<li><p>Python: 3.7.4</p></li>
+							<li><p>Pytorch: 1.7.1</p></li>
+							<li><p>CUDA: 11.0</p></li>
+						</font>
+                        </ul>
+						
+                    </div>
+                </div>
+
+<div id="download_plus_animation"></div></body></html>
