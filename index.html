@@ -2,10 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" class="gr__shape2prog_csail_mit_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 
               <meta name="viewport" content="width=device-width, initial-scale=1">    <link rel="shortcut icon" href="http://shape2prog.csail.mit.edu/images/favicon.ico">
-        <meta name="description" content="Causally Attentive Collaborative Filtering">
-        <meta name="keywords" content="Causally Attentive Collaborative Filtering">
+        <meta name="description" content="Recommendation with Causality enhanced \\ Natural Language Explanations">
+        <meta name="keywords" content="Recommendation with Causality enhanced \\ Natural Language Explanations">
 
-        <title>Causally Attentive Collaborative Filtering</title>
+        <title>Recommendation with Causality enhanced \\ Natural Language Explanations</title>
         <link rel="stylesheet" href="asset/font.css">
         <link rel="stylesheet" href="asset/main.css">
 
@@ -17,7 +17,7 @@
             <div class="container">
 
                 <div class="content project_title">
-                    <h1>Causally Attentive Collaborative Filtering</h1>
+                    <h1>Recommendation with Causality enhanced \\ Natural Language Explanations</h1>
                 </div>
 
                 <div class="content project_headline">
@@ -33,20 +33,21 @@
                 <div class="content">
                     <div class="text">
                         <h1>1. Abstract</h1>
-                        <p><font size=3>Attention-based recommender models hold the promise of improving performance by learning to discriminate different user/item feature importances.
-However, due to the existence of the latent confounders, the correlations captured by the attention mechanisms may fail to reflect the true influence of the features on the targets (i.e., spurious correlation).
-In this paper, we propose to equip attention mechanism with causal inference, which is a powerful tool to identify the real causal effects.
-Our model is based on the potential outcome framework, where the item features are regarded as the treatment and the outcome is the predicted user preference.
-In specific, the real causal relation of each feature on the outcome is measured by the individual treatment effect (ITE).
-In order to distill the causal information into the attention learning process, we minimize the distance between the traditional attention weights and the normalized ITE.
-With such causal regularization, the learned attention weights can reflect the real causal effects, which are expected to correct the feature importances for improved recommendation performance.
-We conduct extensive experiments based on three real-world datasets to demonstrate our model's effectiveness.</font></p>
+                        <p><font size=3>Explainable recommendation has recently attracted increasing attention from both academic and industry communities.
+Among different explainable strategies, generating natural language explanations is an important method, which can deliver more informative, flexible and readable explanations to facilitate better user decisions. 
+Despite effectiveness, existing models are mostly optimized based on the observational datasets, which can be skewed due to the selection or exposure biases.
+To alleviate this problem, in this paper, we formulate the explainable recommendation task with a causal graph, and design an inverse propensity score (IPS) based model to generate unbiased explanations.
+To be more specific, we firstly define an unbiased learning objective, and then leverage IPS to re-weight different samples, such that the underrepresented explanations can be valued more in the training process.
+For more robust optimization, we enhance the above model by minimizing the maximum loss induced by the sample weights near the estimated IPS.
+In addition, we analysis three types of potential unobserved confounders, and infer them to improve the accuracy of the original model.
+By comparing with a series of state-of-the-art methods, we conduct extensive experiments based on three real-world datasets to demonstrate the effectiveness of our model.
+			</font></p>
 			    <h3>Contributions</h3>
                             <p><ul class="download">
 			    <font size=3>
-                            <li>We try to arouse people's attention on the potential spurious correlations captured by existing attention-based recommender models.</li>
-			    <li>We design an ITE enhanced attention mechanism to identify the real feature-target relations, which can better discriminate feature importances and lead to improved recommendation performance.</li>
-			    <li>Extensive experiments based on three real-world datasets are conducted to demonstrate our model's effectiveness.</li>
+                            <li>We propose to build a causal framework to debias explainable recommender models, which, to the best of our knowledge, is the first time in the recommendation domain.</li>
+			    <li>To achieve the above idea, we carefully design an IPS based model, where we not only design principled method to enhance the fault tolerance capability of the IPS estimation, but also analyze and model the potential latent confounders.</li>
+			    <li>We conduct extensive experiments to demonstrate the effectiveness of our model.</li>
                             </font>
                     </div>
                 </div>
