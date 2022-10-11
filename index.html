@@ -27,32 +27,30 @@
                 </div>
 
 
-                
-
-
                 <div class="content">
                     <div class="text">
                         <h1>1. Abstract</h1>
-                        <p><font size=3>Explainable recommendation has recently attracted increasing attention from both academic and industry communities.
+                        <p><font size=3>
+			Explainable recommendation has recently attracted increasing attention from both academic and industry communities.
 Among different explainable strategies, generating natural language explanations is an important method, which can deliver more informative, flexible and readable explanations to facilitate better user decisions. 
-Despite effectiveness, existing models are mostly optimized based on the observational datasets, which can be skewed due to the selection or exposure biases.
-To alleviate this problem, in this paper, we formulate the explainable recommendation task with a causal graph, and design an inverse propensity score (IPS) based model to generate unbiased explanations.
-To be more specific, we firstly define an unbiased learning objective, and then leverage IPS to re-weight different samples, such that the underrepresented explanations can be valued more in the training process.
-For more robust optimization, we enhance the above model by minimizing the maximum loss induced by the sample weights near the estimated IPS.
-In addition, we analysis three types of potential unobserved confounders, and infer them to improve the accuracy of the original model.
-By comparing with a series of state-of-the-art methods, we conduct extensive experiments based on three real-world datasets to demonstrate the effectiveness of our model.
+Despite effectiveness, existing models are mostly optimized based on the observed datasets, which can be skewed due to the selection or exposure bias.
+To alleviate this problem, in this paper, we formulate the task of explainable recommendation with a causal graph, and design a causality enhanced model to generate unbiased explanations.
+More specifically, we firstly define an ideal unbiased learning objective, and then derive a tractable loss for the observational data based on the inverse propensity score (IPS), where the key is a sample re-weighting strategy for equalizing the loss and ideal objective in expectation.
+Considering that the IPS estimated from the sparse and noisy recommendation datasets can be inaccurate, we introduce a fault tolerant mechanism by minimizing the maximum loss induced by the sample weights near the IPS.
+For more comprehensive modeling, we further analyze and infer the potential latent confounders induced by the complex and diverse user personalities.
+We conduct extensive experiments by comparing with the state-of-the-art methods based on three real-world datasets to demonstrate the effectiveness of our model.		
 			</font></p>
+			    
 			    <h3>Contributions</h3>
                             <p><ul class="download">
 			    <font size=3>
-                            <li>We propose to build a causal framework to debias explainable recommender models, which, to the best of our knowledge, is the first time in the recommendation domain.</li>
-			    <li>To achieve the above idea, we carefully design an IPS based model, where we not only design principled method to enhance the fault tolerance capability of the IPS estimation, but also analyze and model the potential latent confounders.</li>
-			    <li>We conduct extensive experiments to demonstrate the effectiveness of our model. To promote this research direction and benefit the community, we have released our framework.</li>
+                            <li>We propose to build an unbiased explainable recommender framework based on causal inference, which, to the best of our knowledge, is the first time in the recommendation domain.
+			    <li>To achieve the above idea, we design a framework to jointly correct the item- and feature-level biases, where we propose a fault tolerant IPS estimation strategy, and also model and infer the potential latent confounders.</li>
+			    <li>We conduct extensive experiments to demonstrate the effectiveness of our model based on three real-world datasets. </li>
+			    <li>To promote this direction and benefit the research community, we have released our framework at this webpage. </li>
                             </font>
                     </div>
                 </div>
-			
-			
 			
 			
 			
